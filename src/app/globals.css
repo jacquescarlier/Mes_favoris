@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+   background-color: #020617 !important; /* Noir profond (slate-950) */
+  color: #f8fafc !important;            /* Texte blanc cassé (slate-50) */
+  min-height: 100vh;
+}
