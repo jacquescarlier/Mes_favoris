@@ -14,6 +14,7 @@ async function main() {
     'Presses',
     'Astuces',
     'Divers',
+    'Gaming',
   ];
 
   console.log('Insertion des 10 catégories de favoris...');
