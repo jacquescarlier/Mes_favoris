@@ -55,3 +55,14 @@ Ouvrez ensuite **http://localhost:3000** dans votre navigateur.
    - Ajoutez la variable d'environnement `DATABASE_URL` avec l'URL de votre base cloud.
    - Définissez la commande de build sur : `npx prisma migrate deploy && npm run build`
    - Une fois déployé, lancez `DATABASE_URL="votre_url_cloud" npm run db:seed` depuis votre terminal local pour remplir les 10 catégories sur la base en ligne.
+
+## Pour ajouter une categorie
+
+Si vous avez juste besoin de créer une ou deux catégories rapidement :
+1. Ouvrez un terminal à la racine de votre projet.
+2. Lancez la commande :bash
+npx prisma studio
+Utilisez le code avec précaution.
+3. Une interface s'ouvre dans votre navigateur (généralement sur http://localhost:5555).
+4. Cliquez sur le modèle Category, puis sur le bouton Add record.
+5. Saisissez le nom dans le champ name et cliquez sur Save 1 change.
