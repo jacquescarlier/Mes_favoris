@@ -66,3 +66,5 @@ Utilisez le code avec précaution.
 3. Une interface s'ouvre dans votre navigateur (généralement sur http://localhost:5555).
 4. Cliquez sur le modèle Category, puis sur le bouton Add record.
 5. Saisissez le nom dans le champ name et cliquez sur Save 1 change.
+
+base de donnée relié à vercel sur https://console.neon.tech
