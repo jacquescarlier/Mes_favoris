@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
 import { prisma } from '@/lib/prisma';
 
 export async function GET() {
@@ -22,13 +23,18 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  const isAdmin = cookies().get('admin_session')?.value === 'authenticated';
+  if (!isAdmin) {
+    return NextResponse.json({ error: 'Non autorisé' }, { status: 401 });
+  }
+
   try {
     const body = await request.json();
     const { title, url, description, categoryId } = body;
 
     if (!title || !url || !categoryId) {
       return NextResponse.json(
-        { error: 'Le titre, l\'URL et la catégorie sont obligatoires.' },
+        { error: "Le titre, l'URL et la catégorie sont obligatoires." },
         { status: 400 }
       );
     }
