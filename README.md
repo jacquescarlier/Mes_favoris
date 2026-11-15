@@ -21,7 +21,7 @@ sudo -u postgres psql -c "CREATE USER lapitou WITH PASSWORD '#Minouche60180';"
 sudo -u postgres psql -c "CREATE DATABASE mes_favoris OWNER lapitou;"
 ```
 
-*(Note : Le fichier `.env` inclus dans ce projet est déjà préconfiguré avec `lapitou`, `#Minouche60180` encodé en `%23Minouche60180` et la base `mes_favoris`.)*
+*(Note : Le fichier `.env` inclus dans ce projet est déjà préconfiguré avec `la*****`, `#M*****6**80` encodé en `%23****6**80` et la base `mes_favoris`.)*
 
 ---
 
