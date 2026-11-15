@@ -1,6 +1,6 @@
 # Mes Favoris (Next.js + React + Node.js + PostgreSQL)
 
-Application web de gestion de favoris internet classés en 10 catégories :
+Application web de gestion de favoris internet classés en catégories :
 **Internet, SVOD, Linux, Shopping, Achat informatique, Dev, Utilitaires, Presses, Astuces, Divers**.
 
 ---
@@ -14,10 +14,10 @@ sudo apt update
 sudo apt install -y postgresql postgresql-contrib
 ```
 
-Créez l'utilisateur `lapitou` et la base de données `mes_favoris` :
+Créez l'utilisateur `*****` et la base de données `mes_favoris` :
 
 ```bash
-sudo -u postgres psql -c "CREATE USER lapitou WITH PASSWORD '#Minouche60180';"
+sudo -u postgres psql -c "CREATE USER ***** WITH PASSWORD '#M******180';"
 sudo -u postgres psql -c "CREATE DATABASE mes_favoris OWNER lapitou;"
 ```
 
