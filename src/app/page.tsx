@@ -271,13 +271,15 @@ export default function Home() {
           return (
             <div
               key={cat.id}
-              onMouseEnter={() => setActiveCategoryId(cat.id)}
-              onClick={() => setActiveCategoryId(cat.id)}
-              className={`category-card bg-slate-900 border rounded-xl p-5 shadow-md transition-all duration-200 cursor-pointer ${
-                isOpen
+              //onMouseEnter={() => setActiveCategoryId(cat.id)}
+              //onClick={() => setActiveCategoryId(cat.id)}
+              onClick={() =>
+                setActiveCategoryId((prev) => (prev === cat.id ? null : cat.id))
+              }
+              className={`category-card bg-slate-900 border rounded-xl p-5 shadow-md transition-all duration-200 cursor-pointer ${isOpen
                   ? 'border-sky-500/60 ring-1 ring-sky-500/30'
                   : 'border-slate-800 hover:border-slate-700'
-              }`}
+                }`}
             >
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-white">{cat.name}</h2>
@@ -286,9 +288,8 @@ export default function Home() {
                     {filteredBookmarks.length}
                   </span>
                   <span
-                    className={`text-slate-400 text-xs transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-sky-400' : ''
-                    }`}
+                    className={`text-slate-400 text-xs transition-transform duration-200 ${isOpen ? 'rotate-180 text-sky-400' : ''
+                      }`}
                   >
                     ▼
                   </span>
@@ -296,7 +297,12 @@ export default function Home() {
               </div>
 
               {isOpen && (
-                <div className="mt-4 pt-4 border-t border-slate-800 cursor-default">
+                //<div className="mt-4 pt-4 border-t border-slate-800 cursor-default">
+                <div
+                  onClick={(e) => e.stopPropagation()}
+                  className="mt-4 pt-4 border-t border-slate-800 cursor-default"
+                >
+
                   {filteredBookmarks.length === 0 ? (
                     <p className="text-sm text-slate-500 italic">Aucun favori</p>
                   ) : (
