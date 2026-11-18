@@ -144,6 +144,11 @@ export default function Home() {
     }
   };
 
+  const totalBookmarks = categories.reduce(
+    (total, cat) => total + cat.bookmarks.length,
+    0
+  );
+
   return (
     <main className="p-6 md:px-10 md:py-8 max-w-7xl mx-auto w-full">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
@@ -152,6 +157,11 @@ export default function Home() {
         </h1>
 
         <div className="flex flex-wrap items-center gap-3">
+          <div className="bg-slate-900 border border-slate-700 text-slate-300 px-3.5 py-2 rounded-lg text-sm flex items-center gap-2">
+            <span>Total :</span>
+            <span className="font-semibold text-sky-400">{totalBookmarks}</span>
+          </div>
+
           <input
             type="text"
             placeholder="Rechercher un favori..."
@@ -271,15 +281,14 @@ export default function Home() {
           return (
             <div
               key={cat.id}
-              //onMouseEnter={() => setActiveCategoryId(cat.id)}
-              //onClick={() => setActiveCategoryId(cat.id)}
               onClick={() =>
                 setActiveCategoryId((prev) => (prev === cat.id ? null : cat.id))
               }
-              className={`category-card bg-slate-900 border rounded-xl p-5 shadow-md transition-all duration-200 cursor-pointer ${isOpen
+              className={`category-card bg-slate-900 border rounded-xl p-5 shadow-md transition-all duration-200 cursor-pointer ${
+                isOpen
                   ? 'border-sky-500/60 ring-1 ring-sky-500/30'
                   : 'border-slate-800 hover:border-slate-700'
-                }`}
+              }`}
             >
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-white">{cat.name}</h2>
@@ -288,8 +297,9 @@ export default function Home() {
                     {filteredBookmarks.length}
                   </span>
                   <span
-                    className={`text-slate-400 text-xs transition-transform duration-200 ${isOpen ? 'rotate-180 text-sky-400' : ''
-                      }`}
+                    className={`text-slate-400 text-xs transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-sky-400' : ''
+                    }`}
                   >
                     ▼
                   </span>
@@ -297,12 +307,10 @@ export default function Home() {
               </div>
 
               {isOpen && (
-                //<div className="mt-4 pt-4 border-t border-slate-800 cursor-default">
                 <div
                   onClick={(e) => e.stopPropagation()}
                   className="mt-4 pt-4 border-t border-slate-800 cursor-default"
                 >
-
                   {filteredBookmarks.length === 0 ? (
                     <p className="text-sm text-slate-500 italic">Aucun favori</p>
                   ) : (
