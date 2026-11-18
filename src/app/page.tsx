@@ -153,18 +153,18 @@ export default function Home() {
     <main className="p-6 md:px-10 md:py-8 max-w-7xl mx-auto w-full">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <h1 className="text-3xl font-bold text-white tracking-tight">
-          Mes Favoris
+          My favorites
         </h1>
 
         <div className="flex flex-wrap items-center gap-3">
           <div className="bg-slate-900 border border-slate-700 text-slate-300 px-3.5 py-2 rounded-lg text-sm flex items-center gap-2">
-            <span>Total :</span>
+            <span>Number of links :</span>
             <span className="font-semibold text-sky-400">{totalBookmarks}</span>
           </div>
 
           <input
             type="text"
-            placeholder="Rechercher un favori..."
+            placeholder="Search for favorites..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="bg-slate-900 border border-slate-700 text-slate-100 placeholder-slate-400 px-4 py-2 rounded-lg focus:outline-none focus:border-sky-500 w-full md:w-72"
@@ -176,7 +176,7 @@ export default function Home() {
               onClick={handleLogout}
               className="bg-slate-800 hover:bg-red-950/60 border border-slate-700 hover:border-red-800 text-slate-300 hover:text-red-300 px-4 py-2 rounded-lg text-sm transition-colors cursor-pointer"
             >
-              Déconnexion
+              Log off
             </button>
           ) : (
             <button
@@ -187,7 +187,7 @@ export default function Home() {
               }}
               className="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 px-4 py-2 rounded-lg text-sm transition-colors cursor-pointer"
             >
-              Mode Admin
+              Admin Mode
             </button>
           )}
         </div>
@@ -200,7 +200,7 @@ export default function Home() {
         >
           <input
             type="password"
-            placeholder="Mot de passe admin..."
+            placeholder="Admin password..."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -210,7 +210,7 @@ export default function Home() {
             type="submit"
             className="bg-sky-600 hover:bg-sky-500 text-white font-medium px-4 py-2 rounded-lg transition-colors cursor-pointer"
           >
-            Valider
+            Validate
           </button>
           {authError && (
             <p className="text-red-400 text-xs w-full">{authError}</p>
@@ -225,7 +225,7 @@ export default function Home() {
         >
           <input
             type="text"
-            placeholder="Nom du site"
+            placeholder="Site name"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
@@ -241,7 +241,7 @@ export default function Home() {
           />
           <input
             type="text"
-            placeholder="Note (optionnel)"
+            placeholder="Note (optional)"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className="bg-slate-800 border border-slate-700 text-white placeholder-slate-400 p-2.5 rounded-lg flex-1 min-w-[160px] focus:outline-none focus:border-sky-500"
@@ -261,7 +261,7 @@ export default function Home() {
             type="submit"
             className="bg-sky-600 hover:bg-sky-500 text-white font-medium px-5 py-2.5 rounded-lg transition-colors cursor-pointer"
           >
-            Ajouter
+            Add
           </button>
         </form>
       )}
